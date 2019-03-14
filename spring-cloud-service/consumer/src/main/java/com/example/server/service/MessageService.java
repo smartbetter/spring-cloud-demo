@@ -1,11 +1,10 @@
 package com.example.server.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.web.client.RestTemplate;
-
-import javax.annotation.Resource;
 
 /**
  * Spring Cloud Ribbon服务调用
@@ -53,7 +52,7 @@ public class MessageService {
     /**
      * 使用Ribbon只需要注入一个RestTemplate即可
      */
-    @Resource
+    @Autowired
     private RestTemplate restTemplate;
 
     /**

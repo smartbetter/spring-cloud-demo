@@ -5,18 +5,17 @@ import java.util.List;
 import com.example.server.domain.Person;
 import com.example.server.service.MessageService;
 import com.example.server.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("/ui")
 public class UiController {
 
-    @Resource
+    @Autowired
     private MessageService messageService;
-    @Resource
+    @Autowired
     private PersonService personService;
 
     @PostMapping("/save")

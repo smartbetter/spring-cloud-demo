@@ -6,17 +6,16 @@ import java.util.List;
 import com.example.server.domain.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-
-import javax.annotation.Resource;
 
 @Service
 public class PersonService {
 
     private static final Logger logger = LoggerFactory.getLogger(PersonService.class);
 
-    @Resource
+    @Autowired
     private PersonFeignService personFeignService;
 
     @HystrixCommand(fallbackMethod = "fallbackSave")
